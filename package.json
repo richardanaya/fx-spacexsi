@@ -1,0 +1,56 @@
+{
+  "name": "fx-spacexsi",
+  "version": "0.1.0",
+  "description": "MCP server and fx skills for Grok Imagine, speech, and search.",
+  "license": "MIT",
+  "author": "Richard Anaya",
+  "type": "module",
+  "bin": {
+    "fx-spacexsi": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && chmod +x dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.build.json --noEmit",
+    "test": "node --experimental-strip-types --test tests/**/*.test.ts",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardanaya/fx-spacexsi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/richardanaya/fx-spacexsi/issues"
+  },
+  "homepage": "https://github.com/richardanaya/fx-spacexsi#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "fx",
+    "mcp",
+    "grok",
+    "xai",
+    "imagine",
+    "speech",
+    "search",
+    "spacexsi"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "typescript": "^5.9.3"
+  }
+}

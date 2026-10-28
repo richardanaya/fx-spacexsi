@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "spacexsi": {
+      "type": "stdio",
+      "command": ["npx", "-y", "fx-spacexsi"],
+      "env": {
+        "XAI_API_KEY": "${XAI_API_KEY}"
+      }
+    }
+  }
+}
