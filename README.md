@@ -1,12 +1,12 @@
 # fx-spacexsi
 
-MCP server and [fx](https://fx.sh) skills for Grok Imagine, speech, and search. The server speaks stdio and calls the xAI REST API with `XAI_API_KEY`.
+stdio MCP server for Grok Imagine, speech, and search. It calls the xAI REST API with `XAI_API_KEY`.
 
 Imagine covers image generation and editing, text-to-video, image-to-video, reference-to-video, video edit, and video extend. Speech covers text-to-speech, speech-to-text, and the voice catalog. Search covers public web search and X search through `POST /v1/responses`.
 
-Request builders match [pi-spacexai](https://github.com/richardanaya/pi-spacexai). This package does not load a pi extension. fx starts the binary as an MCP server and reads the skills in `skills/`.
+Request builders match [pi-spacexai](https://github.com/richardanaya/pi-spacexai). This package does not load a pi extension. fx starts the binary as an MCP server.
 
-## Install for fx
+## Install
 
 From a published package:
 
@@ -41,21 +41,13 @@ fx mcp add spacexsi -- node ./dist/index.js
 
 `npm install` builds `dist/`. Optional `XAI_MODEL` selects the search model. The default is `grok-4.7`.
 
-## Skills
+## Tools
 
-fx discovers `skills/` in a checkout. From GitHub:
+Imagine: `image_gen`, `image_edit`, `text_to_video`, `image_to_video`, `reference_to_video`, `video_edit`, `video_extend`.
 
-```bash
-fx skills install richardanaya/fx-spacexsi --skill grok-imagine
-fx skills install richardanaya/fx-spacexsi --skill grok-speech
-fx skills install richardanaya/fx-spacexsi --skill grok-search
-```
+Speech: `text_to_speech`, `speech_to_text`, `list_speech_voices`.
 
-| Skill | Tools |
-| --- | --- |
-| `grok-imagine` | `image_gen`, `image_edit`, `text_to_video`, `image_to_video`, `reference_to_video`, `video_edit`, `video_extend` |
-| `grok-speech` | `text_to_speech`, `speech_to_text`, `list_speech_voices` |
-| `grok-search` | `web_search`, `x_search` |
+Search: `web_search`, `x_search`.
 
 `quality` is only valid on `grok-imagine-image-2.0`. Web and X domain or handle filters cannot be combined with their exclude lists. Text-to-speech has no model field. Speech-to-text defaults to `grok-voice-transcribe-2.0`.
 

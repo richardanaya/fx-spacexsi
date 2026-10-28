@@ -1,13 +1,12 @@
 # fx-spacexsi
 
-MCP server and fx skills for Grok Imagine, speech, and search.
+MCP server for Grok Imagine, speech, and search.
 
 ## Layout
 
 - `src/xai-api.ts` builds request bodies. It does no I/O. Keep it that way so tests can check the wire without a server.
 - `src/client.ts` calls `https://api.x.ai/v1` and writes media to `outputPath`.
 - `src/server.ts` registers the MCP tools. `src/index.ts` speaks stdio and reads `XAI_API_KEY`.
-- `skills/` is discovered by fx from a checkout. Each directory has one `SKILL.md`.
 - `examples/mcp.json` is a project `.mcp.json` snippet. `examples/search.ts` calls the client directly.
 
 ## Commands

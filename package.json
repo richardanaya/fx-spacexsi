@@ -1,7 +1,7 @@
 {
   "name": "fx-spacexsi",
   "version": "0.1.0",
-  "description": "MCP server and fx skills for Grok Imagine, speech, and search.",
+  "description": "MCP server for Grok Imagine, speech, and search.",
   "license": "MIT",
   "author": "Richard Anaya",
   "type": "module",
@@ -10,7 +10,6 @@
   },
   "files": [
     "dist",
-    "skills",
     "README.md",
     "AGENTS.md",
     "LICENSE"
